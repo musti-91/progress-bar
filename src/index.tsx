@@ -51,7 +51,7 @@ class ScrollProgress extends React.Component<ProgressTypes, State> {
       const docHeight = this.getDocHeight();
 
       const totalDocScroll = docHeight - winHeight;
-      console.log(totalDocScroll);
+
       const scrollPosition = Math.floor((scrollTop / totalDocScroll) * 100);
       this.setState(() => ({
         progress: scrollPosition

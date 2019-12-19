@@ -4,6 +4,11 @@
 
 [![NPM](https://img.shields.io/npm/v/@codereview/progress-bar.svg)](https://www.npmjs.com/package/@codereview/progress-bar) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+![demo](example.gif)
+
+## [Demo](https://codesandbox.io/s/naughty-bouman-px6mt)
+
+
 ## Install
 
 ```bash
