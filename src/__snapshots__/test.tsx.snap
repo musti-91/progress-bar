@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScrollProgress should match snapshot default 1`] = `<ScrollProgress />`;
+
+exports[`ScrollProgress should match snapshot with Props 1`] = `
+<ScrollProgress
+  color="green"
+  height="100px"
+  rtl="left"
+  width="30%"
+/>
+`;

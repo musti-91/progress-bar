@@ -10,21 +10,43 @@
 npm install --save @codereview/progress-bar
 ```
 
+Or
+
+```bash
+yarn add --dev @codereview/progress-bar
+```
+
 ## Usage
 
 ```tsx
-import * as React from 'react'
+import * as React from "react";
 
-import MyComponent from '@codereview/progress-bar'
+import ScrollProgress from "@codereview/progress-bar";
+
+const props = {
+  rtl: "left",
+  color: "red",
+  width: "50%",
+  height: "1em"
+};
 
 class Example extends React.Component {
-  render () {
-    return (
-      <MyComponent />
-    )
+  render() {
+    return <ScrollProgress {...props} />;
   }
 }
 ```
+
+### Props
+
+- Note: All Props are optional
+
+| Name   |  Type  | default |          description |
+| ------ | :----: | ------: | -------------------: |
+| rtl    | string |   right |        right to left |
+| color  | string |    #000 |        showing color |
+| width  | string |    100% |  width of scroll bar |
+| height | string |   0.3em | height of scroll bar |
 
 ## License
 
