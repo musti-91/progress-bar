@@ -1,42 +1,41 @@
-import typescript from 'rollup-plugin-typescript2'
-import commonjs from 'rollup-plugin-commonjs'
-import external from 'rollup-plugin-peer-deps-external'
-// import postcss from 'rollup-plugin-postcss-modules'
-import postcss from 'rollup-plugin-postcss'
-import resolve from 'rollup-plugin-node-resolve'
-import url from 'rollup-plugin-url'
-import svgr from '@svgr/rollup'
+// rollup.config.js
+const typescript = require('@rollup/plugin-typescript');
+const commonjs = require('@rollup/plugin-commonjs');
+const external = require('rollup-plugin-peer-deps-external');
+const postcss = require('rollup-plugin-postcss');
+const resolve = require('@rollup/plugin-node-resolve').default;
+const url = require('@rollup/plugin-url');
+const svgr = require('@svgr/rollup');
+const json = require('@rollup/plugin-json');
 
-import pkg from './package.json'
+const pkg = require('./package.json'); // CommonJS require
 
-export default {
+module.exports = {
   input: 'src/index.tsx',
-  output: [
-    {
-      file: pkg.main,
-      format: 'cjs',
-      exports: 'named',
-      sourcemap: true
-    },
-    {
-      file: pkg.module,
-      format: 'es',
-      exports: 'named',
-      sourcemap: true
-    }
-  ],
+  // output: [
+  //   { file: pkg.main, format: 'cjs', sourcemap: true, exports: 'named' },
+  //   { file: pkg.module, format: 'es', sourcemap: true, exports: 'named' },
+  // ],
+  output: {
+    dir: 'dist',
+    format: 'cjs',
+    sourcemap: true,
+    exports: 'named',
+  },
   plugins: [
     external(),
-    postcss({
-      modules: true
-    }),
+    json(),
+    postcss({ modules: true }),
     url(),
     svgr(),
-    resolve(),
+    resolve({ browser: true, extensions: ['.js', '.jsx', '.ts', '.tsx'] }),
     typescript({
-      rollupCommonJSResolveHack: true,
-      clean: true
+      tsconfig: './tsconfig.json',
+      declaration: true,
+      declarationDir: 'dist/types',
+      rootDir: 'src',
     }),
-    commonjs()
-  ]
-}
+    commonjs(),
+  ],
+  external: ['react', 'react-dom'],
+};
