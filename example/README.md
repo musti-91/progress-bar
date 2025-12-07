@@ -1,53 +1,16 @@
-# @codereview/progress-bar
+# React + Vite
 
-> Progress bar on scroll the page
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-[![NPM](https://img.shields.io/npm/v/@codereview/progress-bar.svg)](https://www.npmjs.com/package/@codereview/progress-bar) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+Currently, two official plugins are available:
 
-## Install
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-```bash
-npm install --save @codereview/progress-bar
-```
+## React Compiler
 
-Or
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-```bash
-yarn add --dev @codereview/progress-bar
-```
+## Expanding the ESLint configuration
 
-## Usage
-
-```tsx
-import * as React from "react";
-
-import ScrollProgress from "@codereview/progress-bar";
-
-const props = {
-  rtl: "left",
-  color: "red",
-  width: "50%",
-  height: "1em"
-};
-
-class Example extends React.Component {
-  render() {
-    return <ScrollProgress {...props} />;
-  }
-}
-```
-
-### Props
-
-- Note: All Props are optional
-
-| Name   |  Type  | default |          description |
-| ------ | :----: | ------: | -------------------: |
-| rtl    | string |   right |        right to left |
-| color  | string |    #000 |        showing color |
-| width  | string |    100% |  width of scroll bar |
-| height | string |   0.3em | height of scroll bar |
-
-## License
-
-MIT © [musti-91](https://github.com/musti-91)
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

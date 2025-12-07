@@ -44,7 +44,6 @@ class Example extends React.Component {
 
 ### Props
 
-- Note: All Props are optional
 
 | Name   |  Type  | default |          description |
 | ------ | :----: | ------: | -------------------: |
