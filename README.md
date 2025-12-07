@@ -3,6 +3,7 @@
 > Progress bar on scroll the page
 
 [![NPM](https://img.shields.io/npm/v/@codereview/progress-bar.svg)](https://www.npmjs.com/package/@codereview/progress-bar) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Node.js Package](https://github.com/musti-91/progress-bar/actions/workflows/npm-publish-github-packages.yml/badge.svg)](https://github.com/musti-91/progress-bar/actions/workflows/npm-publish-github-packages.yml)
 
 ![demo](example.gif)
 
